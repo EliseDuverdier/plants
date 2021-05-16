@@ -1,0 +1,41 @@
+# About
+
+Plant catalog, to know your plants well :)
+
+# tools
+NodeJS and MongoDB
+
+Packages used:
+* express
+* html templates: jade
+* database interface: mongodb
+
+## Mongo DB
+### command line
+```
+    $ mongo
+    show database         -- show «databases»
+    use myproject
+    show collections      -- show all «tables»
+    db.documents.find()   -- find all docs
+    db.documents.find( { name: 'ficus' })   -- find docs with name = ficus
+    db.documents.find( {}, { name: 1, status: 1 } )   -- display only name and status
+    db.documents.find( {}, { name: 1, "temperature.min": 1 } )   -- display name and minimun temperature
+    db.documents.find( {}, { status: 0 } )   -- display all but the status
+
+    db.doc.find( {}, { students: { $elemMatch: { school: 102 } } } ) -- all (first machting in array) students being in scool 102
+```
+### CRUD [https://docs.mongodb.com/manual/crud/]
+```
+db.documents.update(
+    {},                -- query
+    { <update> },      -- object maintenance
+    { multi: true }    -- all or the first
+)
+<update>
+    $unset : { Field : '' }                     remove the attribute from the docs
+    $set   : { Field : '' }                     update the value of th field
+    $inc   : { Field : '' }                     increments (±) the value of field
+    {$rename: { <field1>: <newName1>, <field2>: <newName2>, ... } }        rename the value of the field
+    { Field: 'abc' }                            change the value of the field
+```

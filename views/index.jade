@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    section.list
+        - each plant in plants
+            article(id= plant.name, class= plant.category)
+                h1= plant.name
+                if plant.img
+                    img(src= "images/plants/"+plant.img, alt= plant.name)
+                p ☀ !{plant.expo}
+                p 🌢 !{plant.arrosage}
+                //- p= min: !{plant.temperature.min} — max: !{plant.temperature.max}
+                p ⋙ !{plant.txt}

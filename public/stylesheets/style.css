@@ -1,0 +1,96 @@
+body {
+    font: normal normal 14px 'Karla', sans-serif;
+    background: #cc0;
+    background: linear-gradient(to bottom right, #3bb, #db3, #3bb);
+    background-attachment: fixed;
+    max-width: 45em;
+    margin: 6em auto;
+}
+input, textarea{ background: none; color:#ff7; border: 2px #db3 solid;}
+::-webkit-input-placeholder { color: #efc; }
+input[type="checkbox"] {border-color: #db3;}
+input[type="checkbox"]:checked {background: #ff7;}
+input[type="checkbox"]:focus {outline:0;}
+input[type="submit"], input[type="reset"] {
+    background: #177;
+    color: #ff7;
+}
+label { color: #ff7;}
+
+a {
+    color: #177;
+    text-decoration: none;
+}
+a:hover {
+    color: #7ec;
+}
+
+/* * * layout * * */
+nav {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    background: #3b7;
+    display:block;
+    width: 45em; 
+}
+span.navLink {
+    font-weight: bold;
+    margin-left: 10em;
+}
+ul.nav, ul.nav li { display: inline; }
+
+header.title {
+    text-align: center;
+    font-size: 2em;
+}
+
+/* * * plants * * */
+article {
+    padding: .8em; margin: 0;
+    border-bottom: 2px #db3 solid;
+}
+section.list article {
+    border-bottom-width: 20px;
+    min-height: 225px;
+}
+article:last-child { border: 0; }
+section.list article span.title {font-weight: bold;}
+
+article h1 {
+    margin: .3em 0;
+    font-size: 2em;
+    color: #fff;
+}
+section.list article img {
+    float:right;
+    height: 150px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+/* * * editing * * */
+form input {
+    display: block;
+    margin: .5em;
+}
+input.inline {
+    display: inline;
+    margin-right: -14px;
+}
+article input, article textarea {
+    border-color: #177;
+}
+span.edit-remove {
+    float: right;
+    font-weight: normal;
+}
+
+
+/* * * footer * * */
+footer {
+    color: white;
+    text-align: center;
+    border-top: 2px solid #db3;
+    margin-top: 2em; padding: 1em;
+}

@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    section.edit
+        - each plant in plants
+            article(id= plant.name, class='editable '+ plant.category)
+                h1
+                    if plant.name
+                        span !{plant.name}
+                    else
+                        span (no name)
+                    span.edit-remove
+                        a.edit( href='edit', onclick='return false') 🖉
+                        a.remove( href='remove?id=' + plant._id) 🗙
+
+                form(method='post', action='edit', hidden='true')
+                    input(type='hidden', name='id', value=plant._id )
+                    input(type='text', name='title', placeholder='Nom', value=plant.name )
+                    input(type='text', name='arrosage', placeholder='Arrosage', value=plant.arrosage )
+                    input(type='text', name='expo', placeholder='Exposition', value=plant.expo )
+                    input(type='text', name='txt', placeholder='Description', value=plant.txt )
+                    input(type='submit', value='Edit')
+
+        article
+            h1 New
+            form(method='post', action='add')
+                input( type='text', name='title', placeholder='Title')
+                input( type='text', name='expo', placeholder='Exposition')
+                input( type='text', name='arrosage', placeholder='Arrosage')
+                input( class='inline', type='number', name='temp_min', placeholder='T° min')
+                input( class='inline', type='number', name='temp_max', placeholder='T° max')
+                input( type='file', name='img')
+                textarea( name='txt', placeholder='Description')
+                input( class='inline', type='submit', value='Add')

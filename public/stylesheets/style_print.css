@@ -1,0 +1,53 @@
+@page {
+  size: A4 portrait;
+  margin: 12px;
+  @bottom-left {
+      content: "Page " counter(page) " of " counter(pages);
+  }
+}
+html {
+    width: 210mm;
+    height: 297mm;
+    font-size: 12px;
+    font-family: 'Karla', sans-serif;
+}
+body {
+    background: white;
+    color: black;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+a {
+    color: gray;
+    text-decoration: none;
+}
+
+nav, footer { display: none; }
+
+header.title {
+    text-align: center;
+    font-size: 2em;
+}
+/* * *  plants * * */
+section.list article {
+      page-break-inside: avoid;
+    width: initial; height: initial; min-height: 10em;
+    padding: .3em 1em; margin: 1em;
+    border: 0;
+    border-top: 3px black solid;
+}
+article span.title {font-weight: bold;}
+
+article h1 {
+    margin-bottom: .3em;
+    font-weight: normal;
+    font-size: 2em;
+}
+section.list article img {
+    float: left;
+    max-height: 75px;
+    border-radius: 5px;
+    margin-right: 1em;
+    filter: grayscale(100%);  -webkit-filter: grayscale(100%);
+}

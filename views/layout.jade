@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(charset='utf-8')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/reset.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', media='print', href='/stylesheets/style_print.css')
+    script(src='javascripts/util.js', type='text/javascript')
+  body
+
+    nav
+      input(type='text' id='search' placeholder='filter...')
+      input(type='checkbox' id='eat' value='eat')
+      label(for='eat') eat
+      span.navLink
+        ul.nav
+          li
+            a(href= "/") See
+          li
+            a(href= "edit") Edit
+
+    header.title= title
+
+    block content
+
+    footer
+      CC BY SA 3.0 Elise Duverdier
+
+    script(src='javascripts/plants.js')
