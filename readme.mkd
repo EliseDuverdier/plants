@@ -1,14 +1,17 @@
-# About
+# Plants catalog
 
-Plant catalog, to know your plants well :)
+Mini CRUD project in NodeJS/MongoDB, to know your plants well :)
 
-# tools
+## tools
 NodeJS and MongoDB
 
 Packages used:
 * express
 * html templates: jade
 * database interface: mongodb
+
+## how to use
+???
 
 ## Mongo DB
 ### command line
@@ -23,7 +26,7 @@ Packages used:
     db.documents.find( {}, { name: 1, "temperature.min": 1 } )   -- display name and minimun temperature
     db.documents.find( {}, { status: 0 } )   -- display all but the status
 
-    db.doc.find( {}, { students: { $elemMatch: { school: 102 } } } ) -- all (first machting in array) students being in scool 102
+    db.doc.find( {}, { plants: { $elemMatch: { eat: true } } } ) -- all eatable plants
 ```
 ### CRUD [https://docs.mongodb.com/manual/crud/]
 ```
@@ -39,3 +42,9 @@ db.documents.update(
     {$rename: { <field1>: <newName1>, <field2>: <newName2>, ... } }        rename the value of the field
     { Field: 'abc' }                            change the value of the field
 ```
+
+# Changelog
+*      2021-05-16
+Uploaded to github, updated README
+* v0 - 2017-04-xx
+Made the project
